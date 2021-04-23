@@ -4,10 +4,7 @@
     <projectFile>sample-application.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b345ba07-75d2-44ef-abe9-3b4a0b718d49" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.sample-application/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.sample-application/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="b345ba07-75d2-44ef-abe9-3b4a0b718d49" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619105358908</updated>
       <workItem from="1619105366113" duration="2183000" />
-      <workItem from="1619185668549" duration="1862000" />
+      <workItem from="1619185668549" duration="2720000" />
     </task>
     <servers />
   </component>

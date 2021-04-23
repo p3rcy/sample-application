@@ -2,10 +2,8 @@
 
 This is a sample application to be used as a base for this simple coding exercise. 
 
-Please ensure you have created a **new branch** to make your changes in.
+Please ensure you have created a **new fork** to make your changes in.
 
-
-You can call the branch anything you like but please remember that this repository is **public**
 
 ### Task List ###
 
