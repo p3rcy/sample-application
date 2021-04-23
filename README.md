@@ -1,29 +1,33 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is a sample application to be used as a base for this simple coding exercise. 
 
-### What is this repository for? ###
+Please ensure you have created a **new branch** to make your changes in.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+You can call the branch anything you like but please remember that this repository is **public**
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Task List ###
 
-### Contribution guidelines ###
+* **Password Validation**
+  > Add additional Password Validation to prevent users from registering or changing their password to a password that has been exposed in a data breach.
+* **Fetch Data Formatting**
+  > Format the date in the Fetch Data grid to a human readable format
+  
+  > Update the Summary column to display friendly icons for each forecast summary  
 
-* Writing tests
-* Code review
-* Other guidelines
 
-### Who do I talk to? ###
+### Password Validation ###
 
-* Repo owner or admin
-* Other community or team contact
+You should utilise the API from https://haveibeenpwned.com/Passwords to check for breached passwords.
+
+Full API information can be found here https://haveibeenpwned.com/API/v3#PwnedPasswords An API Key is not required for searching passwords.
+
+You should display a useful error message to the end-user
+
+### Fetch Data Formatting ###
+
+The grid in question is on the URL https://localhost:5001/fetch-data
+
+![Fetch Data](./forecast.png)
+
