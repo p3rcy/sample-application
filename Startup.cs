@@ -11,6 +11,9 @@ using sample_application.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using sample_application.ApiClients;
+using System;
+using sample_application.Helpers;
 
 namespace sample_application
 {
@@ -31,10 +34,22 @@ namespace sample_application
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddPasswordValidator<PasswordBreachValidator<ApplicationUser>>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+
+            services.AddSingleton<ISHAEncryptionHelper, SHAEncryptionHelper>();
+
+            services.AddSingleton<IPasswordBreachClientConfig, PasswordBreachClientConfig>();
+
+            services.AddHttpClient<IPasswordBreachClient, PasswordBreachClient>().ConfigureHttpClient((serviceProvider, httpClient) =>
+                {
+                    var clientConfig = serviceProvider.GetRequiredService<IPasswordBreachClientConfig>();
+                    httpClient.BaseAddress = clientConfig.BaseUrl;
+                    httpClient.Timeout = TimeSpan.FromSeconds(clientConfig.Timeout);
+                });
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
