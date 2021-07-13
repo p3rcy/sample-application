@@ -13,9 +13,18 @@ namespace sample_application.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        private static readonly WeatherSummary[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            new WeatherSummary { Summary = "Freezing", FaSummaryClass = "fas fa-temperature-low" },
+            new WeatherSummary { Summary = "Bracing", FaSummaryClass = "fas fa-wind" }, 
+            new WeatherSummary { Summary = "Chilly", FaSummaryClass = "fas fa-water" },
+            new WeatherSummary { Summary = "Cool", FaSummaryClass = "fas fa-cloud-sun" },
+            new WeatherSummary { Summary = "Mild", FaSummaryClass = "fas fa-cloud-sun" },
+            new WeatherSummary { Summary = "Warm", FaSummaryClass = "fas fa-sun" },
+            new WeatherSummary { Summary = "Balmy", FaSummaryClass = "fas fa-sun" },
+            new WeatherSummary { Summary = "Hot", FaSummaryClass="fas fa-temperature-high" },
+            new WeatherSummary { Summary = "Sweltering", FaSummaryClass="fas fa-temperature-high" },
+            new WeatherSummary { Summary = "Scorching", FaSummaryClass="fas fa-temperature-high" }
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
@@ -33,7 +42,7 @@ namespace sample_application.Controllers
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+                Summary = Summaries[rng.Next(Summaries.Length)],
             })
             .ToArray();
         }

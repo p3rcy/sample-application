@@ -10,6 +10,13 @@ namespace sample_application
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
+        public WeatherSummary Summary { get; set; }
+    }
+
+    public class WeatherSummary
+    {
+        public string FaSummaryClass { get; set; }
+
         public string Summary { get; set; }
     }
 }
